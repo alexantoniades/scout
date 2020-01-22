@@ -11,6 +11,8 @@
 ### Installing dependencies
 #### Ubuntu
 ```bash
+# Update repositories
+sudo apt update && sudo apt upgrade
 # Install dependencies 
 sudo apt install python3 python3-pip nodejs git
 # Install Ansible using PIP3
@@ -21,6 +23,8 @@ ansible-playbook install.yml
 ```
 #### CentOS/RHEL
 ```bash
+# Update repositories
+sudo yum update && sudo yum upgrade
 # Install dependencies 
 sudo yum install python3 python3-pip nodejs git
 # Install Ansible using PIP3
@@ -31,6 +35,8 @@ ansible-playbook install.yml
 ```
 #### OpenSUSE
 ```bash
+# Update repositories
+sudo zypper update && sudo zypper dup
 # Install dependencies 
 sudo zypper install python3 python3-pip nodejs git
 # Install Ansible using PIP3
@@ -50,13 +56,6 @@ cd scout
 ansible-playbook install.yml
 ```
 
-### Start file watch
-* /path/to/directory should be replaced with the target directory to watch
-* database name should be replaced with the database name or the URl of the server if initialised (https://localhost:8080/database_name)
-```bash
-node scout.js /path/to/directory database_name
-```
-
 ### Start PouchDB Server
 If the database server is used, the admin panel can be accessed at "http://localhost:8080/_utils"
 
@@ -68,3 +67,9 @@ A server log can be found in the repo directory after initial start of the serve
 pouchdb-server --port 8080 --dir ./database
 ```
 
+### Start file watch
+* /path/to/directory should be replaced with the target directory to watch
+* database name should be replaced with the database name or the URl of the server if initialised (https://localhost:8080/database_name)
+```bash
+node scout.js /path/to/directory database_name
+```
