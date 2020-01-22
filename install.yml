@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  name: Installing dependencies using npm
+  tasks:
+    - name: Installing chokidar
+      npm:
+        name: chokidar
+        path: ./
+        state: latest
+    - name: Installing pouchdb
+      npm:
+        name: pouchdb
+        path: ./
+        state: latest
+    - name: Installing pouchdb-server
+      npm:
+        name: pouchdb-server
+        global: True
+    - name: Installing uuid
+      npm:
+        name: uuid
+        path: ./
+        state: latest
