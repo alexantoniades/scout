@@ -1,6 +1,6 @@
 # scout :watch: :telescope:
 
-*A simple ansible playbook and nodejs app to watch file changes and log them to a CouchDB database using PouchDB*
+*A simple ansible playbook and nodejs app to watch file changes and log them to a PouchDB database*
 
 ## Dependencies
 * NPM
@@ -11,6 +11,8 @@
 ### Installing dependencies
 #### Ubuntu
 ```bash
+# Update repositories
+sudo apt update && sudo apt upgrade
 # Install dependencies 
 sudo apt install python3 python3-pip nodejs git
 # Install Ansible using PIP3
@@ -21,6 +23,8 @@ sudo ansible-playbook install.yml
 ```
 #### CentOS/RHEL
 ```bash
+# Update repositories
+sudo yum update && sudo yum upgrade
 # Install dependencies 
 sudo yum install python3 python3-pip nodejs git
 # Install Ansible using PIP3
@@ -31,6 +35,8 @@ sudo ansible-playbook install.yml
 ```
 #### OpenSUSE
 ```bash
+# Update repositories
+sudo zypper update && sudo zypper dup
 # Install dependencies 
 sudo zypper install python3 python3-pip nodejs git
 # Install Ansible using PIP3
@@ -50,13 +56,6 @@ cd scout
 sudo ansible-playbook install.yml
 ```
 
-### Start file watch
-* /path/to/directory should be replaced with the target directory to watch
-* database name should be replaced with the database name or the URl of the server if initialised (https://localhost:8080/database_name)
-```bash
-node scout.js /path/to/directory database_name
-```
-
 ### Start PouchDB Server
 If the database server is used, the admin panel can be accessed at "http://localhost:8080/_utils"
 
@@ -73,4 +72,11 @@ Running the ansible playbook *install.yml*, the PouchDB server is added to syste
 ```bash
 # Start PouchDB server service as scout_server.service using systemctl
 sudo systemctl start scout_server.service
+```
+
+### Start file watch
+* /path/to/directory should be replaced with the target directory to watch
+* database name should be replaced with the database name or the URl of the server if initialised (https://localhost:8080/database_name)
+```bash
+node scout.js /path/to/directory database_name
 ```
