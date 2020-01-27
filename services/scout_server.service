@@ -1,0 +1,9 @@
+[Unit]
+Description=Scout server service
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/pouchdb-server --port 8080 --dir /opt/scout/database
+
+[Install]
+WantedBy=default.target

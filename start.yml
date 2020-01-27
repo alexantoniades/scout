@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  name: Start Scout Server
+  tasks:
+    - name: Make sure Scout server service is started
+      systemd:
+        name: scout_server
+        state: started
+    - name: Enable Scout server service
+      systemd:
+        name: scout_server
+        enabled: yes

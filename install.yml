@@ -21,3 +21,13 @@
         name: uuid
         path: ./
         state: latest
+    - name: Install Scout server service
+      command: cp ./services/scout_server.service /etc/systemd/system/scout_server.service
+    - name: Create Scout directory
+      file:
+        path: /opt/scout
+        state: directory
+    - name: Create database directory
+      file:
+        path: /opt/scout/database
+        state: directory

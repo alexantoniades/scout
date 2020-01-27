@@ -17,7 +17,7 @@ sudo apt install python3 python3-pip nodejs git
 sudo pip3 install ansible
 git clone https://github.com/alexantoniades/scout.git
 cd scout
-ansible-playbook install.yml
+sudo ansible-playbook install.yml
 ```
 #### CentOS/RHEL
 ```bash
@@ -27,7 +27,7 @@ sudo yum install python3 python3-pip nodejs git
 sudo pip3 install ansible
 git clone https://github.com/alexantoniades/scout.git
 cd scout
-ansible-playbook install.yml
+sudo ansible-playbook install.yml
 ```
 #### OpenSUSE
 ```bash
@@ -37,7 +37,7 @@ sudo zypper install python3 python3-pip nodejs git
 sudo pip3 install ansible
 git clone https://github.com/alexantoniades/scout.git
 cd scout
-ansible-playbook install.yml
+sudo ansible-playbook install.yml
 ```
 #### MacOS
 ```bash
@@ -47,7 +47,7 @@ sudo brew install python3 python3-pip nodejs git
 sudo pip3 install ansible
 git clone https://github.com/alexantoniades/scout.git
 cd scout
-ansible-playbook install.yml
+sudo ansible-playbook install.yml
 ```
 
 ### Start file watch
@@ -63,8 +63,14 @@ If the database server is used, the admin panel can be accessed at "http://local
 The "--dir" parameter specifies the path to the database files
 
 A server log can be found in the repo directory after initial start of the server (log.txt)
+
 ```bash
 # Default port and directory is 8080 and ./database
 pouchdb-server --port 8080 --dir ./database
 ```
+Running the ansible playbook *install.yml*, the PouchDB server is added to systemd as a service
 
+```bash
+# Start PouchDB server service as scout_server.service using systemctl
+sudo systemctl start scout_server.service
+```
